@@ -1,0 +1,4 @@
+node_modules/
+.anna-app/
+*.log
+dist/

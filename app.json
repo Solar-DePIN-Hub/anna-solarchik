@@ -1,0 +1,10 @@
+{
+  "name": "Solarchik CLOCK IN",
+  "slug": "solarchik-clock-in",
+  "tagline": "Run across sunny rooftops and chat or talk with Sol, your AI pocket friend who remembers your day and cheers your streak.",
+  "description": "Solarchik CLOCK IN is a cosy daily game with an AI friend inside.\n\n• Roof Run: guide Solarchik, a little solar robot, across city rooftops: jump, slide, dodge drones and mites and collect sunlight. Five roof worlds (Sunrise, Village, Storm, Night, Serpent), a daily shift goal, a weekly calendar and a streak to keep.\n• Sol, your pocket AI friend: name them, pick how they talk (Sunny, Dry, Hype, Gentle) and a voice, then chat by text or hold the mic and talk. Sol answers in your language, comments on your runs live from the in-run radio, and keeps you company between shifts.\n• Voice both ways: speech-to-text and text-to-speech run through Anna, so there's nothing to set up and no API key to paste.\n• Daily yard: suns to spend in the shop, unlockable robots and roofs, daily heats.\n\nAI on Anna: every conversation with Sol uses Anna's LLM (anna.llm.complete); voice uses anna.audio.transcribe / anna.audio.speak. The app has no external servers and no trackers. Game progress stays on your device.\n\nMade by Solar DePIN Hub (Ukraine).",
+  "category": "entertainment",
+  "homepage_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik",
+  "support_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik/issues",
+  "privacy_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik/blob/main/PRIVACY.md"
+}

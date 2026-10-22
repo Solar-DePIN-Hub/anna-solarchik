@@ -1,0 +1,37 @@
+{
+  "schema": 2,
+  "required_executas": [],
+  "host_capabilities": ["llm.complete", "llm.audio.speak", "llm.audio.transcribe"],
+  "system_prompt_addendum": "Solarchik CLOCK IN is a cosy solar-robot game: the player runs across city rooftops collecting sunlight, keeps a daily streak, and chats (text or voice) with Sol, their pocket AI friend inside the game. When the user mentions this app, offer to open the game window (view 'main') so they can play or talk to Sol.",
+  "tags": ["game", "ai-companion", "solar", "voice"],
+  "ui": {
+    "bundle": {
+      "format": "static-spa",
+      "entry": "index.html",
+      "external_origins": []
+    },
+    "views": [
+      {
+        "name": "main",
+        "title": "Solarchik CLOCK IN",
+        "default": true,
+        "default_size": { "w": 960, "h": 640 },
+        "min_size": { "w": 360, "h": 560 },
+        "max_size": { "w": 1920, "h": 1200 },
+        "resizable": true,
+        "single_instance": true,
+        "icon": "favicon.svg"
+      }
+    ],
+    "host_api": {
+      "llm": ["complete"],
+      "audio": ["speak", "transcribe", "session"],
+      "storage": ["get", "set"],
+      "window": ["set_title", "ready"]
+    },
+    "csp_overrides": {},
+    "state_merge": "last_writer_wins",
+    "form_factors": ["desktop"]
+  },
+  "dev": { "seed_storage": {}, "user_id": 1 }
+}
