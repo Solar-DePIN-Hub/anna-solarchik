@@ -1,0 +1,4 @@
+#boot-splash{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(#ffb347,#2a3d66 55%,#0b1620);color:#fff;font:700 22px system-ui,sans-serif;transition:opacity .4s}
+#boot-splash .bs-sun{width:110px;height:110px;border-radius:50%;background:#ffe27a;box-shadow:0 0 60px #ffd24a;animation:bp 1.2s ease-in-out infinite alternate}
+#boot-splash .bs-sub{font-weight:500;font-size:15px;opacity:.8}@keyframes bp{to{transform:scale(1.12)}}
+html.no-anna-voice .sol-mic-hidden{display:none!important}

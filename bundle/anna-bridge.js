@@ -72,7 +72,8 @@ async function hear(audio, mime, id) {
     const out = await rt.audio.transcribe({ audioBase64: b64, format: fmt });
     const text = String((out && out.text) || "").trim();
     reply(id, text ? { ok: true, text } : { ok: false });
-  } catch (_) {
+  } catch (e) {
+    if (isDenied(e)) markNoAnnaVoice();
     reply(id, { ok: false });
   }
 }
@@ -93,12 +94,23 @@ function deviceSpeak(text, locale) {
     window.speechSynthesis.speak(u);
   } catch (_) {}
 }
+// Voice fallback: Anna audio is opt-in per user and off by default. If the host
+// refuses audio once, stop asking and use the device's own speech instead.
+let annaAudio = true;
+function markNoAnnaVoice() {
+  annaAudio = false;
+  try { document.documentElement.classList.add("no-anna-voice"); } catch (_) {}
+}
+function isDenied(e) {
+  const c = e && (e.code || e.error || "");
+  return c === "permission_denied" || c === "not_implemented" || c === "audio_disabled";
+}
 async function speak(text, locale) {
   hush();
   const gen = speakGen;
   try {
     const rt = await ready;
-    if (!rt) throw new Error("offline");
+    if (!rt || !annaAudio) throw new Error("offline");
     const out = await rt.audio.speak({ text: String(text).slice(0, 900), format: "mp3", delivery: "inline" });
     if (gen !== speakGen) return;
     if (!out || !out.audioBase64) throw new Error("no audio");
@@ -107,7 +119,8 @@ async function speak(text, locale) {
     for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
     player = new Audio(URL.createObjectURL(new Blob([buf], { type: "audio/mpeg" })));
     await player.play();
-  } catch (_) {
+  } catch (e) {
+    if (isDenied(e)) markNoAnnaVoice();
     if (gen === speakGen) deviceSpeak(text, locale);
   }
 }
