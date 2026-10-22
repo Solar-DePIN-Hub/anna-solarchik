@@ -6,5 +6,10 @@
   "category": "entertainment",
   "homepage_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik",
   "support_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik/issues",
-  "privacy_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik/blob/main/PRIVACY.md"
+  "privacy_url": "https://github.com/Solar-DePIN-Hub/anna-solarchik/blob/main/PRIVACY.md",
+  "screenshots": [
+    "https://raw.githubusercontent.com/Solar-DePIN-Hub/anna-solarchik/main/listing/01-yard.png",
+    "https://raw.githubusercontent.com/Solar-DePIN-Hub/anna-solarchik/main/listing/02-sol-chat.png",
+    "https://raw.githubusercontent.com/Solar-DePIN-Hub/anna-solarchik/main/listing/03-roof-run.png"
+  ]
 }
